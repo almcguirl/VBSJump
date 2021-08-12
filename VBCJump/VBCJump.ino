@@ -1,5 +1,5 @@
-//#include <LiquidCrystal_I2C.h>
 #include <VBCLiquidCrystal_I2C.h>
+
 #define PIN_JOYSTICK 0
 
 // Stepper Motor
@@ -325,14 +325,10 @@ void loop(){
   if (drawHero(heroPos, terrainUpper, terrainLower, distance >> 3)) {
     playing = false; // The hero collided with something. Too bad.
     for (int i = 0; i <= 2; i++) {
-      //digitalWrite(PIN_BUZZER, HIGH);
+      // Player Sound
       tone(PIN_BUZZER, 2500, 100);
       delay(100);
-      //digitalWrite(PIN_BUZZER, LOW);
-      //tone(PIN_BUZZER, 0);
-      //noTone(PIN_BUZZER, );
       tone(PIN_BUZZER, 2000, 100);
-      //delay(100);
     }
   } else {
     if (heroPos == HERO_POSITION_RUN_LOWER_2 || heroPos == HERO_POSITION_JUMP_8) {
